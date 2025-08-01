@@ -832,3 +832,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+function bindModalCloseEvents() {
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('close-modal')) {
+      const modal = e.target.closest('.modal-overlay');
+      if (modal) hideModal(modal);
+    }
+  });
+}
+
+// Call this after DOM loads
+bindModalCloseEvents();
+
+function hideModal(modal) {
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+}

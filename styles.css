@@ -1764,16 +1764,19 @@ header {
 }
 
 /* Mobile Styles */
-@media (max-width: 768px) {
-    /* Hide desktop navigation and show mobile footer nav */
-    .navbar .nav-links, .navbar .auth-buttons {
-        display: none;
-    }
-    
-    /* Hide mobile toggle button */
-    #mobile-toggle {
-        display: none;
-    }
+@media  (max-width: 600px) {
+  .upload-section {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  .upload-icon {
+    font-size: 2rem;
+  }
+  .upload-btn {
+    width: 100%;
+    padding: 0.6rem;
+  }
+}
     
     /* Show mobile footer navigation */
     .mobile-footer-nav {
