@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
      
-    function bindFooterNavEvents() {
+   function bindFooterNavEvents() {
   // Account (Dashboard)
   document.querySelectorAll('.account-link').forEach(link => {
     link.onclick = function (e) {
@@ -153,6 +153,35 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
   });
+
+  // Cart
+  document.querySelectorAll('.cart-link').forEach(link => {
+    link.onclick = function (e) {
+      e.preventDefault();
+      Pages.load('CART');
+      renderCart(); // ✅ ensure cart content appears
+    };
+  });
+
+  // ✅ FIX: Products should use 'PRODUCTS'
+  document.querySelectorAll('.products-link').forEach(link => {
+    link.onclick = function (e) {
+      e.preventDefault();
+      Pages.load('PRODUCTS');
+      renderProducts(); // ✅ load products dynamically
+    };
+  });
+
+  // Home
+  document.querySelectorAll('.home-link').forEach(link => {
+    link.onclick = function (e) {
+      e.preventDefault();
+      Pages.load('HOME');
+    };
+  });
+
+  console.log('✅ Mobile footer nav events bound');
+}
 
   // Cart
   document.querySelectorAll('.cart-link').forEach(link => {
